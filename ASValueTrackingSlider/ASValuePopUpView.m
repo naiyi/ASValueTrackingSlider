@@ -29,12 +29,6 @@
 
 NSString *const SliderFillColorAnim = @"fillColor";
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-@interface ASValuePopUpView () <CAAnimationDelegate>
-@end
-#endif
-
-
 @implementation ASValuePopUpView
 {
     BOOL _shouldAnimate;
@@ -190,7 +184,7 @@ NSString *const SliderFillColorAnim = @"fillColor";
     
     CGFloat anchorX = 0.5+(arrowOffset/CGRectGetWidth(frame));
     self.layer.anchorPoint = CGPointMake(anchorX, 1);
-    self.layer.position = CGPointMake(CGRectGetMinX(frame) + CGRectGetWidth(frame)*anchorX, 0);
+    self.layer.position = CGPointMake(CGRectGetMinX(frame) + CGRectGetWidth(frame)*anchorX, 15);
     self.layer.bounds = (CGRect){CGPointZero, frame.size};
     
     [self setText:text];
